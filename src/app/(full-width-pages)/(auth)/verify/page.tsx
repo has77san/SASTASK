@@ -1,4 +1,3 @@
-import SignUpForm from "@/components/auth/SignUpForm";
 import Verify from "@/components/auth/Verify";
 import { Metadata } from "next";
 

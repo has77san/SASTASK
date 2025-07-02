@@ -4,7 +4,7 @@ import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
 import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -45,7 +45,7 @@ export default function SignUpForm() {
     
   }
 
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     if (name.startsWith("user.")) {
