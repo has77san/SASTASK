@@ -35,7 +35,7 @@ export default function Verify() {
     
   }
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
 
   setData((prevData) => ({

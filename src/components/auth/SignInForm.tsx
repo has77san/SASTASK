@@ -22,7 +22,7 @@ export default function SignInForm() {
   });
 
   // handle input changes
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -40,7 +40,6 @@ export default function SignInForm() {
         }
       );
 
-      // التحقق من الرد
       if (response.status === 200) {
         const data = response.data;
         console.log("Login success:", data);
@@ -58,11 +57,12 @@ export default function SignInForm() {
       } else {
         alert("Login failed: Unexpected response");
       }
-    } catch (error: any) {
-      console.error("Login error:", error);
-      alert(
-        error.response?.data?.detail || "Login failed. Please check your credentials."
-      );
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+    console.error("حدث خطأ:", error.message);
+  } else {
+    console.error("Unknown error:", error);
+  }
     }
   };
 
