@@ -25,7 +25,7 @@ export default function Verify() {
         },
       }); 
       
-      if(response.status === 'success' || response.status === 200) {
+if (response.status === 200 || response.data.status === 'success') {
         router.push("/signin"); 
       }
   } catch (error) {
