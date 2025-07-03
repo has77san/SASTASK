@@ -34,6 +34,14 @@ export default function SignUpForm() {
       }); 
       if (response.status === 201) {
       alert("Registration successful! Redirecting to verification...");
+      const data = {
+        email: Data.user.email,
+      }
+      axios.post("https://dev42025.pythonanywhere.com/api/user/send/otp/", data,{
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }); 
       router.push("/verify"); 
     } else {
       alert("Unexpected response. Please try again.");

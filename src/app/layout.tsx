@@ -1,3 +1,5 @@
+"use client";
+import React from 'react';
 import { Outfit } from 'next/font/google';
 import './globals.css';
 
